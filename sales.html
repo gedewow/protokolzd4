@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>продажи</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="style_kt.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body class="original-bg">
+
+    <div class="header">
+        <div class="text_hr">
+            <div class="text_hr_vp">
+              <img src="image/lg.png" class="img_lg">
+              <h1 class="h1">VirtualPlay</h1>
+            </div>
+            
+            <div class="settings-container">
+                <div class="settings-button" id="theme-switcher">Изменить тему</div>
+                
+                <div class="settings-button" id="theme-switcher"><a href="feedback.html">Обратная связь</a></div>
+                 <div class="settings-button">Контакты
+                <div class="settings-content">
+                    <a href="https://web.whatsapp.com/">Вацап</a>
+                    <a href="https://web.telegram.org/">Телеграм</a>
+                    <a href="https://ru-ru.facebook.com/">Фейсбук</a>
+                </div>
+              </div>
+            </div>
+        </div>
+        
+    </div>
+          
+        <div id="sidebar">
+           
+                <div class="btn btn-1"><a href="index.html">Главная </a></div> 
+                <div class="btn btn-2 dropdown-1 dropbtn-1">Каталог
+                  <div class="dropdown-content dropdown-content-1">
+                    <a href="genres.html">Жанры</a>
+                    <a href="newkt.html">Новые</a>
+                    <a href="popular.html">Популярные</a>
+                    <a href="katalog.html">Все</a>
+                  </div>
+                </div> 
+                <div class="btn btn-3"><a href="news.html">Новости</a></div> 
+               
+                <div class="btn btn-5"><a href="author.html">Вход</a></div>
+       
+        </div>
+<div class="main">
+    <h1 class="h_0">график продаж</h1>
+    <div class="container">
+        <canvas id="gameSalesChart"></canvas>
+    </div>
+</div>
+  
+
+    <div class="footer">
+        <div class="container">
+            <div class="text_hr_vp_footer">
+                <img src="image/lg.png" class="img_lg_footer">
+                <h1 class="h1">VirtualPlay</h1>
+            </div>
+    
+            <div class="column">
+                <ul>
+                    <li><a href="#">о нас</a></li>
+                    <li><a href="#">сервисы</a></li>
+                    <li><a href="lab14.html">График продаж</a></li>
+                 
+                </ul>
+            </div>
+            <div class="column">
+                <ul>
+                    
+                    <li><a >Текущая дата</a></li>
+                    <li><a id="dateLink"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<script src="script.js"></script>
+<script>
+$(document).ready(function() {
+    const gameSalesData = {
+        labels: ['2020', '2021', '2022', '2023'],
+        datasets: [{
+            label: 'Продажи игр',
+            data: [150, 100, 200, 120],
+            backgroundColor: ['#0066ff', '#00b300', '#ff8000', '#800080'],
+            hoverOffset: 4
+        }]
+    };
+
+    const gameSalesConfig = {
+        type: 'pie',
+        data: gameSalesData,
+        options: {
+            responsive: true,
+            animation: {
+                animateScale: true,
+                animateRotate: true
+            },
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return context.label + ': ' + context.parsed + ' продаж';
+                        }
+                    }
+                }
+            }
+        }
+    };
+
+    const gameSalesChart = new Chart(
+        document.getElementById('gameSalesChart'),
+        gameSalesConfig
+    );
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="style_kt.css">
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="forms.css">
+  
+    <title>Document</title>
+</head>
+<body class="original-bg">
+
+<div class="header">
+    <div class="text_hr">
+        <div class="text_hr_vp">
+          <img src="image/lg.png" class="img_lg">
+          <h1 class="h1">VirtualPlay</h1>
+        </div>
+        
+        <div class="settings-container">
+            <div class="settings-button" id="theme-switcher"><a>Изменить тему</a></div>
+            
+            <div class="settings-button" id="theme-switcher"><a href="feedback.html">Обратная связь</a></div>
+             <div class="settings-button"><a>Контакты</a>
+            <div class="settings-content">
+                <a href="https://web.whatsapp.com/">Вацап</a>
+                <a href="https://web.telegram.org/">Телеграм</a>
+                <a href="https://ru-ru.facebook.com/">Фейсбук</a>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+</div>
+      
+    <div id="sidebar">
+       
+            <div class="btn btn-1"><a href="index.html">Главная </a></div> 
+            <div class="btn btn-2 dropdown-1 dropbtn-1">Каталог
+              <div class="dropdown-content dropdown-content-1">
+                <a href="genres.html">Жанры</a>
+                <a href="newkt.html">Новые</a>
+                <a href="popular.html">Популярные</a>
+                <a href="katalog.html">Все</a>
+              </div>
+            </div> 
+            <div class="btn btn-3"><a href="news.html">Новости</a></div> 
+           
+            <div class="btn btn-5"><a href="author.html">Вход</a></div>
+   
+    </div>
+    <style>
+    
+    </style>
+    <div class="main">
+        
+        <h2 class="h_0">Рекомендуемое</h2>
+        <div class="main_1">
+            <a href="https://www.mythrillfiction.com/the-dark-rider" alt="Mythrill" target="_blank" class="katalog">
+                <div class="card">
+                    <div class="wrapper">
+                        <img src="image/dark_rider-cover.jpg" class="cover-image" />
+                    </div>
+                    <img src="image/dark_rider-title.png" class="title" />
+                    <div class="rating">4.5</div>
+                    <div class="price">$19.99</div>
+                </div>
+            </a>
+            <a href="https://www.mythrillfiction.com/force-mage" alt="Mythrill" target="_blank" class="katalog">
+                <div class="card">
+                    <div class="wrapper">
+                        <img src="image/force_mage-cover.jpg" class="cover-image" />
+                    </div>
+                    <img src="image/force_mage-title.png" class="title" />
+                    <div class="rating">4.2</div>
+                    <div class="price">$24.99</div>
+                </div>
+            </a>
+       
+   
+  
+
+        </div>
+
+        <!-- Кнопки для прокрутки -->
+        <div class="scroll-buttons">
+            <button id="scrollLeft">Назад</button>
+            <button id="scrollRight">Вперед</button>
+        </div>
+        
+    </div>
+       
+    <div class="main">
+        <h2 class="h_0">Новое</h2>
+        <div class="main_1">
+            <a href="https://www.mythrillfiction.com/the-dark-rider" alt="Mythrill" target="_blank" class="katalog">
+                <div class="card">
+                    <div class="wrapper">
+                        <img src="image/dark_rider-cover.jpg" class="cover-image" />
+                    </div>
+                    <img src="image/dark_rider-title.png" class="title" />
+                    <div class="rating">4.5</div>
+                    <div class="price">$19.99</div>
+                </div>
+            </a>
+            <a href="https://www.mythrillfiction.com/force-mage" alt="Mythrill" target="_blank" class="katalog">
+                <div class="card">
+                    <div class="wrapper">
+                        <img src="image/force_mage-cover.jpg" class="cover-image" />
+                    </div>
+                    <img src="image/force_mage-title.png" class="title" />
+                    <div class="rating">4.2</div>
+                    <div class="price">$24.99</div>
+                </div>
+            </a>
+       
+   
+  
+
+        </div>
+
+        <!-- Кнопки для прокрутки -->
+        <div class="scroll-buttons">
+            <button id="scrollLeft">Назад</button>
+            <button id="scrollRight">Вперед</button>
+        </div> 
+          
+    </div>
+   
+ 
+  
+    <div class="footer">
+        <div class="container">
+            <div class="text_hr_vp_footer">
+                <img src="image/lg.png" class="img_lg_footer">
+                <h1 class="h1">VirtualPlay</h1>
+            </div>
+    
+            <div class="column">
+                <ul>
+                    <li><a href="#">о нас</a></li>
+                    <li><a href="#">сервисы</a></li>
+                    <li><a href="sales.html">График продаж</a></li>
+                 
+                </ul>
+            </div>
+            <div class="column">
+                <ul>
+                    
+                    <li><a >Текущая дата</a></li>
+                    <li><a id="dateLink"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script src="theme.js"></script>
+    <script src="script.js"></script>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var container = $('.main_1');
+            var cardCount = $('.card').length;
+            var currentIndex = 0;
+
+            // Дублируем карточки
+            $('.card').clone().prependTo(container);
+            $('.card').clone().appendTo(container);
+
+            // Функция для прокрутки к следующей карточке
+            function scrollToCard(index) {
+                var targetCard = $('.card').eq(index);
+                var targetPosition = targetCard.position().left;
+                container.scrollLeft(targetPosition);
+            }
+
+            // Обработчики для кнопок прокрутки
+            $('#scrollLeft').click(function() {
+                currentIndex = (currentIndex - 1 + cardCount * 2) % (cardCount * 2);
+                scrollToCard(currentIndex);
+            });
+
+            $('#scrollRight').click(function() {
+                currentIndex = (currentIndex + 1) % (cardCount * 2);
+                scrollToCard(currentIndex);
+            });
+
+           
+            // Запускаем прокрутку каждые 3 секунды (3000 миллисекунд)
+            setInterval(function() {
+                currentIndex = (currentIndex + 1) % (cardCount * 2);
+                scrollToCard(currentIndex);
+            }, 3000);
+        });
+
+       
+    </script>
+    
+<!--
+      <p><a href="SVG.html">Лаб 10 SVG эффекты</a></p>
+      <p><a href="lab11/task1.html">Лаб 11 задание 1</a></p>
+      <p><a href="lab11/task2.html">Лаб 11 задание 2</a></p>
+      <p><a href="lab13.html">Лабораторная 13</a></p>
+      <p></p>
+      <p><a href="lab15.html">лаб 15</a></p>
+      <p><a href="test.html">test</a></p> 
+-->
+</body>
+</html>
